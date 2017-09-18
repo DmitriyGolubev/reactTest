@@ -63,7 +63,7 @@ export default class App extends React.Component {
                     id: 292
                 },
                 {
-                    name: 'RUR',
+                    name: '100 RUR',
                     id: 298
                 }
             ],
@@ -201,16 +201,14 @@ export default class App extends React.Component {
             })
             this.state.csvTable.push(obj);
         })
-        console.log(this.state.csvTable);
-        console.log(this.state.csvColumns);
         this.setState({csvTable: this.state.csvTable, csvColumns: this.state.csvColumns})
     }
 
     render() {
 
         var options = {
-            title: `rate of the Belarusian ruble to ` + this.state.currency,
-            vAxis: {title: this.state.currency},
+            title: `rate of the Belarusian ruble to ` + this.state.currentCurrency.name,
+            vAxis: {title: this.state.currentCurrency.name},
             hAxis: {title: 'Date'},
         };
         const {from, to} = this.state;
@@ -219,7 +217,7 @@ export default class App extends React.Component {
 
             <div className="Main">
                 Select a view
-                <button onClick={this.changeView}>{!this.state.table ? 'Table' : 'Chart'}</button>
+                <button className="view-button" onClick={this.changeView}>{!this.state.table ? 'Table' : 'Chart'}</button>
                 <div style={{display: this.state.table ? '' : 'none'}}>
                     <CsvDownloader
                         filename="myfile"
@@ -227,7 +225,7 @@ export default class App extends React.Component {
                         datas={this.state.csvTable}
                         text="DOWNLOAD"
                         >
-                        <button>Download</button>
+                        <button style={{margin:'20px'}}>Download</button>
                     </CsvDownloader>
                     <div>
                         Add currency

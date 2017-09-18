@@ -1,20 +1,30 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
-.RangeExample{
-  text-align: center;
+.RangeExample {
+    text-align: center;
 }
 
-.Main{
-  padding-top: 30px;
-  text-align: center;
+.Main {
+    padding-top: 30px;
+    text-align: center;
 }
 
-table th{
-   border:1px solid black;
- }
+table th {
+    border: 1px solid black;
+}
 
-table td{
-  border:1px solid black;
+table td {
+    border: 1px solid black;
+}
+
+table {
+    margin: auto;
+    margin-top: 20px;
+}
+
+.view-button {
+    margin-left: 20px;
+
 }
